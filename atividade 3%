@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+    float preco, pc;
+    char opcao;
+    printf("Digite o preço:");
+    scanf("%f", &preco);
+    if(preco <= 0){
+        printf("Preço incorreto da mercadoria. \n");
+        main();}
+    else
+    {
+        printf("Digite a Opção:");
+        scanf("\n%c", &opcao);
+        if(opcao == 'A' || opcao == 'a')
+        {
+        pc = preco * 1.03;
+        printf("O preço corrigido com acrescimo : %.2f \n", pc);
+        }
+        else if(opcao == 'd'|| opcao == 'D')
+            pc = preco * 0.97;
+        printf("O preço corrigdo com desconto: %.2f \n ", pc);
+    }
+    system("pause");
+    return 0;
+}
